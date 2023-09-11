@@ -1,4 +1,6 @@
-﻿namespace EmployeeProgram
+﻿using CustomConsole;
+
+namespace EmployeeProgram
 {
 	internal class Program
 	{
@@ -16,12 +18,23 @@
 			double totalMonthlySalary = 0;
 			foreach (var employee in employees)
 			{
+				// Calculate the monthly salary for the current employee
 				double monthlySalary = employee.CalculateMonthlySalary();
-				Console.WriteLine($"{employee.Name} ({employee.Title}): Monthly Salary = ${monthlySalary:F2}");
+				
+				// Display the monthly salary for the current employee
+				Console.WriteLine($"{employee.Name} ({employee.Title}): Monthly Salary = ${monthlySalary:F}");
+				
+				// Add the monthly salary for the current employee to the total monthly salary
 				totalMonthlySalary += monthlySalary;
 			}
 
-			Console.WriteLine($"Total Monthly Salary for All Employees: ${totalMonthlySalary:F2}");
+			// Display the total monthly salary for all employees
+			ConsoleHelper.PrintBlank();
+			Console.WriteLine($"Total monthly salary for all employees: ${totalMonthlySalary:F}");
+			
+			// Pause the program and wait for the user to press a key to end the program
+			ConsoleHelper.PrintBlank();
+			ConsoleHelper.HaltProgram();
 		}
 	}
 }

@@ -13,7 +13,7 @@ public class Employee
         Title = title;
         Salary = salary;
     }
-
+    
     public virtual double CalculateMonthlySalary()
     {
         return Salary / 12.0;
@@ -29,7 +29,7 @@ public class Manager : Employee
     {
         Bonus = bonus;
     }
-
+    
     public override double CalculateMonthlySalary()
     {
         return (Salary + Bonus) / 12.0;
